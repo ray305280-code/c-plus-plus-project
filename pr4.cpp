@@ -3,7 +3,6 @@ using namespace std;
 
 class BankAccount
 {
-protected:
     int accountNumber;
     string accountHolderName;
 private:
@@ -19,7 +18,7 @@ public:
 
     void deposit(double amt) { balance += amt; }
 
-    virtual void withdraw(double amt)
+    void withdraw(double amt)
     {
         if (amt <= balance)
             balance -= amt;
@@ -29,12 +28,12 @@ public:
 
     double getBalance() { return balance; }
 
-    virtual void calculateInterest()
+     void calculateInterest()
     {
         cout << "No Interest Calculation\n";
     }
 
-    virtual void displayAccountInfo()
+     void displayAccountInfo()
     {
         cout << "\nA/C No: " << accountNumber
              << "\nName: " << accountHolderName
